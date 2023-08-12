@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebebeb"
+    >
+    <View
+        android:id="@+id/marketV1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#fbb80e">
+
+    </View>
+    <TextView
+        android:id="@+id/homeText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="#000000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+
+        android:text="推荐"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#666666"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="15dp"
+
+        android:text="制作"/>
+
+    <ImageView
+        android:id="@+id/homeDevice"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/zgprint"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"/>
+    <ImageView
+        android:id="@+id/homeDeviceState"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/zgdevicestate"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"/>
+<com.grozziie.grozziie_pdf.XCRoundRectImageView
+    android:id="@+id/homeImage"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:src="@drawable/home1"
+    android:layout_marginTop="5dp"
+    android:layout_below="@+id/homeText1"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:scaleType="fitXY"
+
+    />
+    <!--<com.youth.banner.Banner-->
+        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/banner"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+
+
+
+    <LinearLayout
+        android:id="@+id/homeMakeBarcodelayout"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/homeImage"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bt_4"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        >
+        <ImageView
+            android:id="@+id/homeMakeBarcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/zgmakebarcode"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标签制作"
+            android:layout_marginTop="5dp"
+            android:textColor="#000000"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/homeShoplayout"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bt_4"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/homeImage"
+        android:layout_toRightOf="@+id/homeMakeBarcodelayout"
+
+        >
+        <ImageView
+            android:id="@+id/homeShop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/zgshop"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商城"
+            android:textColor="#000000"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/homeHistorylayout"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bt_4"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/homeImage"
+        android:layout_toRightOf="@+id/homeShoplayout"
+
+        >
+        <ImageView
+            android:id="@+id/homeHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/zghistory"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="历史"
+            android:textColor="#000000"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/homeNewProductlayout"
+        android:layout_marginTop="10dp"
+
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bt_4"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/homeShoplayout"
+        android:layout_toRightOf="@+id/homeMakeBarcodelayout"
+
+        >
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新品上市"
+            android:textColor="#000000"
+            android:layout_gravity="center"
+            android:gravity="left"/>
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/homeNewProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home2"
+            />
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/homeTextPerson"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="人气推荐"
+        android:textColor="#000000"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/homeMakeBarcodelayout"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/homeTextPerson"
+       android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+
+            android:layout_marginRight="10dp"
+            >
+
+            <com.grozziie.grozziie_pdf.XCRoundRectImageView
+                android:id="@+id/personImage1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ebebeb"
+                android:src="@drawable/home3"
+                android:scaleType="fitXY"
+                />
+            <TextView
+                android:id="@+id/personBarName1"
+                android:layout_below="@+id/personImage1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#222222"
+                android:gravity="left"
+                android:text="10*30mm   220张"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/personBarType1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/personBarName1"
+                android:text="厨房不干胶贴纸"
+                android:textColor="#999999"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/persontBarPrice1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/personBarType1"
+                android:textColor="#FFFA0000"
+                android:text="￥20"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/goodscar128"
+                android:layout_below="@id/personBarType1"
+                android:layout_marginLeft="120dp"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_below="@+id/homeTextPerson"
+            android:layout_marginLeft="10dp"
+            >
+
+            <com.grozziie.grozziie_pdf.XCRoundRectImageView
+                android:id="@+id/personImage2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home4"
+                android:scaleType="fitXY"
+                android:background="#ebebeb"
+                />
+            <TextView
+                android:id="@+id/personBarName2"
+                android:layout_below="@+id/personImage2"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#222222"
+                android:gravity="left"
+                android:text="10*30mm   220张"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/personBarType2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/personBarName2"
+                android:text="厨房不干胶贴纸"
+                android:textColor="#999999"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/personBarPrice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/personBarType2"
+                android:textColor="#FFFA0000"
+                android:text="￥20"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/goodscar128"
+                android:layout_below="@id/personBarType2"
+                android:layout_marginLeft="120dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

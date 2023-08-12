@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f0f0f0"
+    >
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="#ffffff"
+         android:layout_marginTop="10dp"
+         android:layout_marginLeft="10dp"
+
+         >
+          <TextView
+              android:id="@+id/HistoryLabelTitle"
+
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+              android:textSize="20sp"
+              android:textColor="#222222"
+              android:gravity="center"
+              android:text="115200"
+              android:textStyle="bold"/>
+     <ImageView
+         android:layout_below="@+id/HistoryLabelTitle"
+         android:id="@+id/HistoryLabelImage"
+         android:layout_width="match_parent"
+         android:layout_height="150dp"
+         android:background="#ffffff"
+         android:src="@drawable/home3"
+         android:scaleType="fitCenter"
+         />
+     <TextView
+         android:id="@+id/HistoryLabelSize"
+         android:layout_below="@+id/HistoryLabelImage"
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:textSize="18sp"
+         android:textColor="#222222"
+         android:gravity="left"
+         android:text="20*40mm"
+         android:textStyle="bold"/>
+     <TextView
+         android:id="@+id/HistoryLabelTime"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/HistoryLabelSize"
+         android:text="20220824101818"
+         android:textColor="#999999"
+         android:textSize="14sp"
+         android:textStyle="bold"
+         />
+
+
+     </RelativeLayout>
+</RelativeLayout>

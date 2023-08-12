@@ -1,0 +1,838 @@
+package com.example.administrator.test.BlueTooth;
+
+import android.Manifest;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothManager;
+import android.bluetooth.BluetoothSocket;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import com.tbruyelle.rxpermissions2.RxPermissions;
+//import com.blankj.utilcode.util.ToastUtils;
+import com.example.administrator.test.AngenlActivity;
+import com.example.administrator.test.BlueTooth.adapter.BleAdapter;
+
+import com.example.administrator.test.R;
+import com.example.administrator.test.BlueTooth.adapter.BleAdapter;
+import com.example.administrator.test.R;
+//import com.tbruyelle.rxpermissions2.RxPermissions;
+
+//import org.greenrobot.eventbus.EventBus;
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+//import com.example.administrator.myapplication.BlueTooth.adapter.BleAdapter;
+
+//import de.greenrobot.event.EventBus;
+
+
+public class BlueToothMainActivity extends AppCompatActivity {
+//    private static final String TAG ="ble_tag" ;
+//    private BluetoothAdapter mBluetoothAdapter;
+//    private BluetoothManager mBluetoothManager;
+//    ListView bleListView;
+//    private TextView Display1;
+//    private TextView Display2;
+//    private TextView Display3;
+//    private TextView Display4;
+//    private  ImageView Search;
+    private String DiZhi="B0:55:08:55:9F:AC";
+    private int i=0;
+//    private BleAdapter mAdapter;
+//    private List<BluetoothDevice> mDatas=new ArrayList<BluetoothDevice>();
+//
+//    private List<Integer> mRssis;
+
+
+
+    private int ABCDefg=0;
+    private static final String TAG ="ble_tag" ;
+    ProgressBar pbSearchBle;
+    ImageView ivSerBleStatus;
+    TextView tvSerBleStatus;
+    TextView tvSerBindStatus;
+    ListView bleListView;
+    private boolean BlueState=false;
+    private LinearLayout operaView;
+    private Button btnWrite;
+    private Button btnRead;
+    private EditText etWriteContent;
+    private TextView tvResponse;
+    private List<BluetoothDevice> mDatas;
+    private List<Integer> mRssis;
+    private BleAdapter mAdapter;
+    private BluetoothAdapter mBluetoothAdapter;
+    private BluetoothManager mBluetoothManager;
+    private boolean isScaning=false;
+    private boolean isConnecting=false;
+    private BluetoothGatt mBluetoothGatt;
+    private Button BlueSend;
+    private ImageView backMain;
+    public  static final UUID MY_UUID= UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+    private BluetoothSocket socket=null;
+    public static BluetoothSocket socketall=null;
+    public  static String BluetoothMac="";
+    public static int iFlag=0;
+    private Button BlueSend7;
+    protected Handler handler;
+    protected  UpdateTimer updateTimer;
+    private RelativeLayout layout_ser_ble;
+
+    //private L
+    //private BleAdapter mAdapter;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_search_device);
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(getResources().getColor(R.color.bacgroundColor));
+//        Search=findViewById(R.id.b1);
+//       // Display1=(TextView) findViewById(R.id.T1);
+//        Display1=findViewById(R.id.T1);
+//        Display2=findViewById(R.id.T2);
+//        Display3=findViewById(R.id.T3);
+//        Display4=findViewById(R.id.T4);
+        backMain=findViewById(R.id.backMain);
+        pbSearchBle=findViewById(R.id.progress_ser_bluetooth);
+        ivSerBleStatus=findViewById(R.id.iv_ser_ble_status);
+        tvSerBindStatus=findViewById(R.id.tv_ser_bind_status);
+        tvSerBleStatus=findViewById(R.id.tv_ser_ble_status);
+        bleListView=findViewById(R.id.ble_list_view);
+        operaView=findViewById(R.id.opera_view);
+        btnWrite=findViewById(R.id.btnWrite);
+        btnRead=findViewById(R.id.btnRead);
+        etWriteContent=findViewById(R.id.et_write);
+        tvResponse=findViewById(R.id.tv_response);
+        BlueSend=findViewById(R.id.BlueConnect);
+        BlueSend7=findViewById(R.id.BlueSend7);
+        layout_ser_ble=findViewById(R.id.layout_ser_ble);
+
+        initData();
+        intView();
+        stateBlueTooth();
+        //EventBus.getDefault().register(this);
+
+
+        mBluetoothManager= (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
+        mBluetoothAdapter=mBluetoothManager.getAdapter();//耿大爷获取蓝牙适配器
+        if (mBluetoothAdapter==null||!mBluetoothAdapter.isEnabled())//耿大爷判断是否支持或者判断蓝牙是否开启
+       {
+            Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);//耿大爷打开蓝牙
+            startActivityForResult(intent, 0);
+        }
+    }
+    private void initData() {
+        mDatas=new ArrayList<>();
+        mRssis=new ArrayList<>();
+        mAdapter=new BleAdapter(BlueToothMainActivity.this,mDatas,mRssis);
+        bleListView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+    }
+//    public void setSocket (BluetoothSocket socket1)
+//    {
+//        this.socket=socket1;
+//    }
+//
+//    public BluetoothSocket getSocket() {
+//        return socket;
+//    }
+
+    private void intView(){
+        ivSerBleStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                //scanDevice();//耿大爷targetSdkVersion<23直接调用查询
+                checkPermissions();//耿大爷android 6.0 并且targetSdkVersion>23需要再次获取位置权限
+                /*
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Display1.setText("停止搜索");
+                    }
+                },5000);*/
+
+            }
+        });
+        BlueSend7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent=new Intent();
+//
+//                intent.setClass(MainActivity.this,SendPictureActivity.class);
+//                Bundle bundle=new Bundle();
+//                bundle.putString("sss",socket.toString());
+//                intent.putExtras(bundle);
+
+                //setSocket(socket);
+
+//                Intent intent1=new Intent();
+//                intent1.putExtra("sssss",socket);
+
+                //BluetoothConnect sss =new BluetoothConnect();
+
+                //sss.setSocket(socket);
+
+                if(socket==null)
+                    Log.e(TAG,"null is socket 1");
+                else
+                    Log.e(TAG, socket.toString());
+
+                Intent intent=new Intent(BlueToothMainActivity.this, SendPictureActivity.class);
+                intent.putExtra("s", String.valueOf(socket));
+                startActivity(intent);
+                //startActivity(new Intent(MainActivity.this,SendPictureActivity.class));
+                handler =new Handler();
+                updateTimer=new UpdateTimer();
+                handler.postDelayed(updateTimer,500);
+
+//                try{
+//                    String String_S="ABCDEFG";
+//
+//                    byte[] msgBuffer = String_S.getBytes();
+//
+////                    XmsgBuffer[0]=0x1B;
+////                    XmsgBuffer[1]=0x4A;
+////                    XmsgBuffer[2]=0x30;
+////                    XmsgBuffer[3]=0x0D;
+////                    XmsgBuffer[4]=0x0A;
+////                    msgBuffer[0] = 0x1B;
+
+////                    msgBuffer[1] = 0x4A;
+////                    msgBuffer[2] = 0x10;
+//                    OutputStream os = socket.getOutputStream();
+//                    os.write(msgBuffer);
+//                }
+//                catch (IOException e)
+//                {
+//                    Log.e(TAG,"s");
+//                }
+            }
+        });
+        backMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mBluetoothAdapter.isDiscovering()) {
+                    //判断蓝牙是否正在扫描，如果是调用取消扫描方法；如果不是，则开始扫描
+                    mBluetoothAdapter.cancelDiscovery();
+                    isScaning = false;
+                    pbSearchBle.setVisibility(View.GONE);
+                    tvSerBindStatus.setText("搜索已停止");
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            //Display1.setText("停止搜索");
+                            if(socket==null)
+                            {
+                                //Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+                                //startActivity(intent);
+                                finish();
+                            }
+                            else{
+                                socketall=socket;
+
+                                //Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+                                //startActivity(intent);
+                                finish();
+                            }
+                        }
+                    },1000);
+
+                }
+                else{
+                    if(socket==null)
+                    {
+                        //Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+                        //startActivity(intent);
+                        finish();
+                    }
+                    else{
+                        socketall=socket;
+
+                        //Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+                        //startActivity(intent);
+                        finish();
+                    }
+                }
+
+
+
+
+
+//                if(socket==null)
+//                {
+//                    Intent intent=new Intent(BlueToothMainActivity.this, PrintActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//                else{
+//                    socketall=socket;
+//
+//                    Intent intent=new Intent(BlueToothMainActivity.this, PrintActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+            }
+        });
+        BlueSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(socket==null)
+                {
+
+                }
+                else{
+                    socketall=socket;
+
+                    Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+//               try {
+////================ceshi=================================================
+//                    ArrayList<Byte> Gray_Arraylist;
+//                    Gray_Arraylist=new ArrayList<Byte>();
+//                    Byte[]Gray_Send;
+//                    //List<byte> list=new ArrayList<byte>();
+//                    int Gray_i=0;
+//                    int alpha = 0xFF << 24;
+//                    int []i_G=new int[7];
+//                    int Send_Gray=0x00;
+////        String Start_S="@<"+hexStr2Str("0D0A0000")+"#<";
+//////        String String_S="";
+//////
+//////        String End_S=">#@>";
+//                    int StartInt=0;
+//                    char  StartWords='@';
+//
+//                    Gray_Arraylist.add((byte)StartWords);
+//                    Gray_i++;
+//
+//                    StartWords='<';
+//                    //StartInt=Integer.getInteger(StartWords);
+//                    Gray_Arraylist.add((byte)StartWords);
+//                    Gray_i++;
+//
+//                    StartInt=0x0D;
+//                    Gray_Arraylist.add((byte)StartInt);
+//                    Gray_i++;
+//
+//                    StartInt=0x0A;
+//                    Gray_Arraylist.add((byte)StartInt);
+//                    Gray_i++;
+//
+//
+//                    StartInt=0x00;
+//                    Gray_Arraylist.add((byte)StartInt);
+//                    Gray_i++;
+//
+//                    StartInt=0x00;
+//                    Gray_Arraylist.add((byte)StartInt);
+//                    Gray_i++;
+//                for(int xp=1;xp<120;xp++)
+//                {
+//                    StartWords = '#';
+//                    //StartInt=Integer.getInteger(StartWords);
+//                    Gray_Arraylist.add((byte) StartWords);
+//                    Gray_i++;
+//
+//                    StartWords = '<';
+//                    //StartInt=Integer.getInteger(StartWords);
+//                    Gray_Arraylist.add((byte) StartWords);
+//                    Gray_i++;
+//
+//
+//                    for(int xpj=1;xpj<145;xpj++)
+//                    {
+//                        StartInt = 0x80;
+//                        Gray_Arraylist.add((byte) StartInt);
+//                        Gray_i++;
+//
+//                        StartInt = 0x01;
+//                        Gray_Arraylist.add((byte) StartInt);
+//                        Gray_i++;
+//                        StartInt = 0x83;
+//                        Gray_Arraylist.add((byte) StartInt);
+//                        Gray_i++;
+//
+//                        StartInt = 0x01;
+//                        Gray_Arraylist.add((byte) StartInt);
+//                        Gray_i++;
+//                    }
+//                    StartWords = '#';
+//                    //StartInt=Integer.getInteger(StartWords);
+//                    Gray_Arraylist.add((byte) StartWords);
+//                    Gray_i++;
+//
+//                    StartWords = '>';
+//                    //StartInt=Integer.getInteger(StartWords);
+//                    Gray_Arraylist.add((byte) StartWords);
+//                    Gray_i++;
+//                }
+//                    StartWords = '@';
+//                    //StartInt=Integer.getInteger(StartWords);
+//                    Gray_Arraylist.add((byte) StartWords);
+//                    Gray_i++;
+//
+//                    StartWords = '>';
+//                    //StartInt=Integer.getInteger(StartWords);
+//                    Gray_Arraylist.add((byte) StartWords);
+//                    Gray_i++;
+//
+//
+//                    byte[] sss=new byte[Gray_Arraylist.size()];
+//                    Gray_Send=new Byte[Gray_Arraylist.size()];
+//                    Gray_Arraylist.toArray(Gray_Send);
+//                    for(int xx=0;xx<Gray_Send.length;xx++){
+//                        sss[xx]=Gray_Send[xx];
+//                    }
+//                    OutputStream os = socket.getOutputStream();
+//                    byte[] sssy=new byte[1];
+//                    sssy[0]=0x01;
+//                    //sssy[1]=0x02;
+//                    os.write(sss);
+////=============================================ceshi===================================
+                    //====================================================
+//                    String message = "";//hexStr2Str("7072696E740A");
+//                    String Start_S="@<"+hexStr2Str("0D0A0000")+"#<";
+//                    String String_S="";
+//
+//                    String End_S=">#@>";
+//                    for(int i=1;i<217;i++)
+//                    {
+//                        String_S+="A";
+//                    }
+//                    for(int i=1;i<217;i++)
+//                    {
+//                        String_S+="B";
+//                    }
+//                    for(int i=1;i<217;i++)
+//                    {
+//                        String_S+="C";
+//                    }
+//                    for(int i=1;i<217;i++)
+//                    {
+//                        String_S+="D";
+//                    }
+//                    message=Start_S+String_S+End_S;
+//                    byte[] msgBuffer = message.getBytes();
+//                    byte[] XmsgBuffer=new byte[]{0x70,0x72,0x69,0x6E,0x74,0x0A};
+////                    XmsgBuffer[0]=0x1B;
+////                    XmsgBuffer[1]=0x4A;
+////                    XmsgBuffer[2]=0x30;
+////                    XmsgBuffer[3]=0x0D;
+////                    XmsgBuffer[4]=0x0A;
+////                    msgBuffer[0] = 0x1B;
+////                    msgBuffer[1] = 0x4A;
+////                    msgBuffer[2] = 0x10;
+//                    OutputStream os = socket.getOutputStream();
+//                    os.write(XmsgBuffer);
+                    //=====================================================================================
+//                }
+//                catch (IOException e)
+//                {
+//                    Log.e(TAG,"s");
+//                }
+            }
+        });
+        bleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Toast.makeText(ListViewActivity.this,"你点击了"+position,Toast.LENGTH_SHORT).show();
+
+
+                mBluetoothAdapter.cancelDiscovery();
+                isScaning = false;
+                pbSearchBle.setVisibility(View.GONE);
+                //tvSerBindStatus.setText("搜索已停止");
+                tvSerBindStatus.setText("连接中");
+                if(BlueState==false) {
+
+
+                    TextView xx = view.findViewById(R.id.introduce);
+                    xx.getText();
+                    BluetoothMac=xx.getText().toString().replace(":","");
+                    //unregisterReceiver(bluetoothReceiver);
+                    BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(xx.getText().toString());
+                    try {
+                        socket = device.createRfcommSocketToServiceRecord(MY_UUID);
+                        Log.e(TAG, xx.getText().toString());
+                        socket.connect();
+
+                    } catch (IOException e) {
+                        Log.e(TAG, "e");
+                    }
+                    Log.e(TAG, "uuuuuu");
+                    //stateBlueTooth();
+
+                }
+                else
+                {
+//                    if (mBluetoothAdapter.isDiscovering()) {
+//                        //判断蓝牙是否正在扫描，如果是调用取消扫描方法；如果不是，则开始扫描
+//                        mBluetoothAdapter.cancelDiscovery();
+//                        isScaning = false;
+//                        pbSearchBle.setVisibility(View.GONE);
+//                        tvSerBindStatus.setText("搜索已停止");
+//                    }
+
+                    tvSerBindStatus.setText("已连接");
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            //Display1.setText("停止搜索");
+                            if(socket==null)
+                            {
+                                //Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+                                //startActivity(intent);
+                                finish();
+                            }
+                            else{
+                                socketall=socket;
+
+                                //Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+                                //startActivity(intent);
+                                finish();
+                            }
+                        }
+                    },1000);
+                }
+
+
+            }
+        });
+
+    }
+    public static String hexStr2Str(String hexStr)
+    {
+        String str = "0123456789ABCDEF";
+        char[] hexs = hexStr.toCharArray();
+        byte[] bytes = new byte[hexStr.length() / 2];
+        int n;
+
+        for (int i = 0; i < bytes.length; i++)
+        {
+            n = str.indexOf(hexs[2 * i]) * 16;
+            n += str.indexOf(hexs[2 * i + 1]);
+            bytes[i] = (byte) (n & 0xff);
+        }
+        return new String(bytes);
+    }
+    private void checkPermissions() {
+        RxPermissions rxPermissions = new RxPermissions(BlueToothMainActivity.this);
+        rxPermissions.request(android.Manifest.permission.ACCESS_FINE_LOCATION)
+                .subscribe(new io.reactivex.functions.Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean aBoolean) throws Exception {
+                        if (aBoolean) {
+                            // 用户已经同意该权限
+                            //scanDevice();//BLE蓝牙搜索
+                            serchBlueTooth();
+                        } else {
+                            // 用户拒绝了该权限，并且选中『不再询问』
+                            //ToastUtils.showLong("用户开启权限后才能使用");
+                        }
+                    }
+                });
+    }
+    private  void serchBlueTooth()
+    {
+        if (mBluetoothAdapter.getScanMode() != BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) //不在可被搜索的范围
+        {
+            Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+            discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 0);//设置本机蓝牙在300秒内可见
+            startActivity(discoverableIntent);
+        }
+        if (mBluetoothAdapter.isDiscovering()) {
+            //判断蓝牙是否正在扫描，如果是调用取消扫描方法；如果不是，则开始扫描
+            mBluetoothAdapter.cancelDiscovery();
+            isScaning=false;
+            pbSearchBle.setVisibility(View.GONE);
+            tvSerBindStatus.setText("搜索已停止");
+            //layout_ser_ble.setBackgroundColor(R.drawable.bg_ble_progress);
+
+
+            if(BlueState==true)
+                tvSerBindStatus.setText("已连接");
+            //onDestroy();
+        } else {
+            mBluetoothAdapter.startDiscovery();
+            isScaning=true;
+            pbSearchBle.setVisibility(View.VISIBLE);
+            //layout_ser_ble.setVisibility(View.GONE);
+            //layout_ser_ble.setBackgroundColor(Color.WHITE);
+            tvSerBindStatus.setText("正在搜索");
+            IntentFilter intentFilter = new IntentFilter(BluetoothDevice.ACTION_FOUND);//注册广播接收信号
+            registerReceiver(bluetoothReceiver, intentFilter);//用BroadcastReceiver 来取得结果
+        }
+        //onDestroy();
+
+
+    }
+//    protected  void onDestroy(){
+//        super.onDestroy();
+//        unregisterReceiver(bluetoothReceiver);
+//
+//    }
+
+    private final BroadcastReceiver bluetoothReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            //int blueState=intent.getIntExtra(mBluetoothAdapter.EXTRA_STATE,0);
+            //String aaa;
+           // aaa=Integer.toString(blueState);
+           // Log.e(TAG,aaa);
+           // if(blueState==mBluetoothAdapter.STATE_TURNING_ON)
+            //{tvSerBindStatus.setText("已打开");
+           //     Log.e(TAG,"已打开AAAAAAAAAAAAAAAAAAAAAAAA");
+           // }
+
+            // else
+            //{
+                Log.e(TAG,"BBBBBBBBBBBBBBB");
+                if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                    BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                    Log.e(TAG,"设备名："+device.getName()+"\n" +"设备地址："+device.getAddress() + "\n");//将搜索到的蓝牙名称和地址添加到列表。
+
+                    if (!mDatas.contains(device)){
+                        mDatas.add(device);
+                        mRssis.add(i++);
+                        mAdapter.notifyDataSetChanged();
+                    }
+                }
+            //}
+        }
+    };
+    private void  stateBlueTooth()
+    {
+        //IntentFilter intentFilter1= new IntentFilter(BluetoothDevice.ACTION_ACL_CONNECTED);//注册广播连接状态
+        IntentFilter intentFilter1= new IntentFilter();
+                intentFilter1.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
+        intentFilter1.addAction(BluetoothDevice.ACTION_ACL_CONNECTED);
+        intentFilter1.addAction(BluetoothDevice.ACTION_ACL_DISCONNECTED);
+        registerReceiver(bluetoothState, intentFilter1);//用BroadcastReceiver 来取得结果
+//        IntentFilter intentFilter1 = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);//注册广播接收信号
+//        registerReceiver(bluetoothState, intentFilter1);//用BroadcastReceiver 来取得结果
+//
+//        IntentFilter intentFilter = new IntentFilter(BluetoothDevice.ACTION_ACL_CONNECTED);//注册广播接收信号
+//        registerReceiver(bluetoothState, intentFilter);//用BroadcastReceiver 来取得结果
+
+
+
+        Log.e(TAG,"hahahah");
+    }
+    private final BroadcastReceiver bluetoothState = new BroadcastReceiver() {
+        @Override
+
+        public void onReceive(Context context, Intent intent) {
+            Log.e(TAG,"333333");
+            String action = intent.getAction();
+            BluetoothDevice device =intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+            Log.e(TAG,"256256");
+            if(action!=null)
+            switch (action)
+            {
+                case BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED:
+                    int blueState=intent.getIntExtra(BluetoothAdapter.EXTRA_STATE,0);
+                    switch (blueState)
+                    {
+                        case BluetoothAdapter.STATE_ON:
+                            Log.e(TAG,"蓝牙已经打开了");
+                            tvSerBindStatus.setText("已打开");
+                            break;
+                        case BluetoothAdapter.STATE_OFF:
+                            Log.e(TAG,"蓝牙已经关闭了");
+                            break;
+                    }
+                    Log.e(TAG,"2222222");
+                    break;
+                case BluetoothDevice.ACTION_ACL_CONNECTED:
+                    Log.e(TAG,"已连接");
+                    tvSerBindStatus.setText("已连接");
+                    BlueState=true;
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            //Display1.setText("停止搜索");
+                            if(socket==null)
+                            {
+                                //Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+                                //startActivity(intent);
+                                finish();
+                            }
+                            else{
+                                socketall=socket;
+
+                                //Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+                                //startActivity(intent);
+                                finish();
+                            }
+                        }
+                    },1000);
+                    break;
+                case BluetoothDevice.ACTION_ACL_DISCONNECTED:
+                    BlueState=false;
+                    //BlueMac="";
+                    //BlueName="";
+                    tvSerBindStatus.setText("请连接");
+                        Log.e(TAG,"已经断开");
+                        break;
+
+            }
+            //int blueState=intent.getIntExtra(mBluetoothAdapter.EXTRA_STATE,0);
+            //String aaa;
+            // aaa=Integer.toString(blueState);
+            // Log.e(TAG,aaa);
+            // if(blueState==mBluetoothAdapter.STATE_TURNING_ON)
+            //{tvSerBindStatus.setText("已打开");
+            //     Log.e(TAG,"已打开AAAAAAAAAAAAAAAAAAAAAAAA");
+            // }
+
+            // else
+            //{
+//            Log.e(TAG,"BBBBBBBBBBBBBBB");
+//            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+//                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+//                Log.e(TAG,"设备名："+device.getName()+"\n" +"设备地址："+device.getAddress() + "\n");//将搜索到的蓝牙名称和地址添加到列表。
+//                if (!mDatas.contains(device)){
+//                    mDatas.add(device);
+//                    mRssis.add(i++);
+//                    mAdapter.notifyDataSetChanged();
+//                }
+//            }
+            //}
+        }
+    };
+
+    private void scanDevice(){
+        tvSerBindStatus.setText("正在搜索2");
+        //isScaning=true;
+        //pbSearchBle.setVisibility(View.VISIBLE);
+        Log.e(TAG, "run: 搜索...");
+        mBluetoothAdapter.startLeScan(scanCallback);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //结束扫描
+                mBluetoothAdapter.stopLeScan(scanCallback);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //isScaning=false;
+                        //pbSearchBle.setVisibility(View.GONE);
+                        //Display1.setText("搜索已结束");
+                    }
+                });
+            }
+        },5000);
+    }
+    BluetoothAdapter.LeScanCallback scanCallback=new BluetoothAdapter.LeScanCallback() {
+        @Override
+        public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
+            Log.e(TAG, device.getAddress());
+           // Display3.setText(device.toString());
+
+
+
+            BluetoothAdapter mBluetoothAdapter= BluetoothAdapter.getDefaultAdapter();
+            String getName=mBluetoothAdapter.getName();
+            Log.e(TAG, "qqq"+getName);
+            tvSerBindStatus.setText(device.getAddress());
+
+            tvSerBindStatus.setText(device.getName());
+            //Log.e(TAG, Display4.toString());
+            //if (!mDatas.contains(device)){
+                String LanYa ="2A:7B:8D:1F:7B:F3";
+                String LanYa1="2A:7B:8D:1F:7B:F3";
+                //Display1.setText(LanYa);
+               // String  DiZhi="DC:0D:30:43:DD:4B";
+                String DiZhi1="DC:0D:30:42:A6:3D";
+                String DiZhi2="47:E6:B6:8A:06:31";
+                String DiZhi3="11:17:B8:B9:78:D0";
+                if (DiZhi.equals(device.getAddress().toString())){
+                //mDatas.add(device);
+                    tvSerBindStatus.setText("1123");
+
+               // Display2.setText(device.getAddress());
+                //Display2.setText(device.getBondState());
+               // mRssis.add(rssi);
+                //mAdapter.notifyDataSetChanged();
+                }
+                if(LanYa1.equals(device.getAddress().toString())) {
+                    tvSerBindStatus.setText("5566");
+                    //Display2.setText(device.getName().toString());
+                }
+            if(LanYa1==device.getAddress()) {
+                tvSerBindStatus.setText(device.getName());
+            }
+            if(LanYa1==device.getAddress()) {
+                tvSerBindStatus.setText(device.getName());
+            }
+
+        }
+    };
+    class UpdateTimer implements Runnable {
+        public void run()
+        {
+            EventBus.getDefault().post(new FirstEvent(socket));
+            handler=null;
+//            if(handler!=null)
+//                handler.postDelayed(this,UPDATE_EVERY);
+        }
+    }
+    @Override
+    protected void onDestroy()
+    {
+        //setSocket(socket);
+       super.onDestroy();
+        //setSocket(socket);
+        if(socket==null)
+        {
+            Log.e(TAG, "null is sockey2");
+        }
+        else
+            Log.e(TAG, "66666");
+        unregisterReceiver(bluetoothState);
+
+    }
+    @Override
+    public void onBackPressed(){
+        //Intent intent=new Intent(BlueToothMainActivity.this, AngenlActivity.class);
+        //startActivity(intent);
+        this.finish();
+
+    }
+
+
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:shape="rectangle"
+
+    android:useLevel="false">
+
+    <corners
+
+        android:radius="100dp"
+
+        />
+
+    <gradient
+
+        android:startColor="@color/bacgroundColor"
+
+        android:endColor="@color/bacgroundColor"
+
+        android:useLevel="false"
+
+        android:type="linear"
+
+        android:angle="90"
+
+        >
+
+    </gradient>
+    <!--CCCC00-->
+
+</shape>
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+    <!--&lt;!&ndash;圆角&ndash;&gt;-->
+    <!--<corners android:radius="20dp"-->
+        <!--android:topLeftRadius="20dp"-->
+        <!--android:topRightRadius="20dp"-->
+        <!--android:bottomLeftRadius="20dp"-->
+        <!--android:bottomRightRadius="20dp" />-->
+
+    <!--&lt;!&ndash;描边&ndash;&gt;-->
+    <!--<stroke android:width="10dp"-->
+        <!--android:color="#faf9f9"-->
+        <!--android:dashWidth="20dp"-->
+        <!--android:dashGap="0dp" />-->
+
+<!--</shape>-->

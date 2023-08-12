@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewFlipperOnTouchActivity"
+    android:background="#eeeeee"
+    android:orientation="vertical"
+    android:keepScreenOn="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linnerViewPDF"
+            android:layout_gravity="center"
+            android:background="#eeeeee"
+            android:gravity="center">
+            <ViewFlipper
+                android:id="@+id/displayViewFlipperPDF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                >
+            </ViewFlipper>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="2dp">
+            <TextView
+                android:id="@+id/PDFCountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/displayViewFlipperPDF"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+
+                android:text="1/1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linnerViewPDF"
+            android:layout_weight="3"
+            android:background="@drawable/bt_9"
+            android:layout_marginTop="5dp"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_gravity="center">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="left"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="Paper Size:"-->
+                <!--android:textColor="#000000"-->
+
+
+                <!--/>-->
+
+                <CheckBox
+                    android:id="@+id/CheckPaper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="50dp"
+                    android:buttonTint="@color/bacgroundColor"
+                    android:checked="true"
+                    android:text="@string/flipper_ratio"
+
+                    android:textColor="#000000" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <LinearLayout
+                    android:id="@+id/RL1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:id="@+id/PageSizeW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pdfwidth"
+                        android:gravity="center"
+                        android:text="@string/flipper_papersizew"
+                        android:textColor="#000000"
+
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/RL2"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+                    android:gravity="right"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/PageInputWidth"
+                        style="?android:attr/textViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:digits="0123456789"
+                        android:drawablePadding="0dp"
+                        android:drawableRight="@drawable/pdfedit"
+                        android:inputType="number"
+                        android:text="100"
+                        android:textColor="#000000"
+                        android:textColorHint="#999999"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/RL1"
+                    android:layout_marginTop="0dp"
+                    android:background="#999999" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/RL3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:id="@+id/PageSizeH"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pdfheight"
+                        android:gravity="center"
+                        android:text="@string/flipper_papersizeh"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/RL4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/RL3"
+                    android:gravity="right"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <EditText
+                        android:id="@+id/PageInputHeight"
+                        style="?android:attr/textViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:digits="0123456789"
+                        android:drawablePadding="0dp"
+                        android:drawableRight="@drawable/pdfedit"
+                        android:inputType="number"
+                        android:text="100"
+                        android:textColor="#000000"
+                        android:textColorHint="#999999"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/RL3"
+                    android:layout_marginTop="0dp"
+                    android:background="#999999" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/RL5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pdfstart"
+                        android:gravity="center"
+                        android:text="@string/flipper_pagestart"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/RL6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/RL5"
+                    android:gravity="right"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <EditText
+                        android:id="@+id/PageInputStart"
+                        style="?android:attr/textViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:digits="0123456789"
+                        android:drawablePadding="0dp"
+                        android:drawableRight="@drawable/pdfedit"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textColor="#000000"
+                        android:textColorHint="#999999"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/RL5"
+                    android:layout_marginTop="0dp"
+                    android:background="#999999" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/RL7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pdfend"
+                        android:gravity="center"
+                        android:text="@string/flipper_pageend"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/RL8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/RL7"
+                    android:gravity="right"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <EditText
+                        android:id="@+id/PageInputEnd"
+                        style="?android:attr/textViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:digits="0123456789"
+                        android:drawablePadding="0dp"
+                        android:drawableRight="@drawable/pdfedit"
+                        android:inputType="number"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:textColorHint="#999999"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/RL7"
+                    android:layout_marginTop="0dp"
+                    android:background="#999999" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/RL9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pdfcopies"
+                        android:gravity="center"
+                        android:text="@string/flipper_copies"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/RL10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/RL9"
+                    android:gravity="right"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <EditText
+                        android:id="@+id/PageInputCopies"
+                        style="?android:attr/textViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:digits="0123456789"
+                        android:drawablePadding="0dp"
+                        android:drawableRight="@drawable/pdfedit"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textColor="#000000"
+                        android:textColorHint="#999999"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/RL9"
+                    android:layout_marginTop="0dp"
+                    android:background="#999999" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="clip_vertical"
+
+                >
+
+                <LinearLayout
+                    android:id="@+id/RL11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pdfrtate"
+                        android:gravity="center"
+                        android:text="@string/flipper_rotate"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/RL12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/RL11"
+
+                    android:gravity="right"
+                    android:paddingLeft="5dp"
+
+                    android:paddingRight="5dp"
+                    android:layout_marginBottom="1dp"
+
+                    >
+
+                    <TextView
+
+                        android:id="@+id/PageInputRotate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawablePadding="0dp"
+                        android:drawableRight="@drawable/pdfedit"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="#000000"
+
+                        android:textSize="18sp"
+
+                        />
+                </LinearLayout>
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:layout_below="@+id/RL11"-->
+                    <!--android:layout_marginTop="0dp"-->
+                    <!--android:background="#999999" />-->
+            </RelativeLayout>
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/PDFSizeButton"-->
+            <!--android:layout_below="@+id/PDFCountNumber"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_centerHorizontal="true">-->
+            <!--<TextView-->
+            <!--android:id="@+id/PageSizeWD"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="W:"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="28sp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--/>-->
+
+            <!--<EditText-->
+            <!--android:id="@+id/PageInputWidthD"-->
+            <!--android:layout_width="110dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:background="@drawable/bt_6"-->
+            <!--android:gravity="center"-->
+            <!--android:inputType="number"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:paddingRight="20dp"-->
+            <!--android:text="100"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textColorHint="#999999"-->
+            <!--android:textSize="28sp"-->
+            <!--android:digits="0123456789"/>-->
+            <!--<TextView-->
+            <!--android:id="@+id/PageSizeHD"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="H:"-->
+            <!--android:textColor="#000000"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="28sp"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="10dp"/>-->
+            <!--<EditText-->
+            <!--android:id="@+id/PageInputHeightD"-->
+            <!--android:layout_width="110dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="28sp"-->
+            <!--android:textColorHint="#999999"-->
+            <!--android:textColor="#000000"-->
+            <!--android:background="@drawable/bt_6"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:paddingRight="20dp"-->
+            <!--android:layout_below="@+id/barcodeInput"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:inputType="number"-->
+            <!--android:text="135"-->
+            <!--android:digits="0123456789"/>-->
+
+
+            <!--</LinearLayout>-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Page:"-->
+            <!--android:textColor="#000000"-->
+            <!--android:layout_gravity="left"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--/>-->
+            <!--<LinearLayout-->
+            <!--android:id="@+id/PDFPageButton"-->
+            <!--android:layout_below="@+id/PDFCountNumber"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_centerHorizontal="true">-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text=" S:"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="28sp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--/>-->
+            <!--<EditText-->
+            <!--android:id="@+id/PageInputStartD"-->
+            <!--android:layout_width="110dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="28sp"-->
+            <!--android:textColorHint="#999999"-->
+            <!--android:textColor="#000000"-->
+            <!--android:background="@drawable/bt_6"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:paddingRight="20dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:text="1"-->
+            <!--android:inputType="number"-->
+            <!--android:digits="0123456789"/>-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text=" E:"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="28sp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="10dp"/>-->
+            <!--<EditText-->
+            <!--android:id="@+id/PageInputEndD"-->
+            <!--android:layout_width="110dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="28sp"-->
+            <!--android:textColorHint="#999999"-->
+            <!--android:textColor="#000000"-->
+            <!--android:background="@drawable/bt_6"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:paddingRight="20dp"-->
+            <!--android:layout_below="@+id/barcodeInput"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:inputType="number"-->
+            <!--android:digits="0123456789"-->
+            <!--android:text=""/>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Copies:"-->
+            <!--android:textColor="#000000"-->
+            <!--android:layout_gravity="left"-->
+            <!--android:layout_marginLeft="20dp"/>-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Rotate:(°)"-->
+            <!--android:textColor="#000000"-->
+            <!--android:layout_marginLeft="110dp"-->
+            <!--/>-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/PDFCopiesButton"-->
+            <!--android:layout_below="@+id/PDFCountNumber"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_centerHorizontal="true">-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text=" C:"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="28sp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--/>-->
+            <!--<EditText-->
+            <!--android:id="@+id/PageInputCopiesD"-->
+            <!--android:layout_width="110dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="28sp"-->
+            <!--android:textColorHint="#999999"-->
+            <!--android:textColor="#000000"-->
+            <!--android:background="@drawable/bt_6"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:paddingRight="20dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:text="1"-->
+            <!--android:inputType="number"-->
+            <!--android:digits="0123456789"/>-->
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text=" R:"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="28sp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="10dp"/>-->
+            <!--<TextView-->
+            <!--android:id="@+id/PageInputRotateD"-->
+            <!--android:layout_width="110dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="28sp"-->
+            <!--android:text="0"-->
+            <!--android:textColor="#000000"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:background="@drawable/bt_6"/>-->
+
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+            <!--android:id="@+id/PDFfunctionButton"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/PDFPageButton"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="10dp">-->
+            <!--<Button-->
+            <!--android:id="@+id/PDFPrintButtonD"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Print"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textColor="#65abff"-->
+            <!--android:background="@drawable/bt_8"-->
+            <!--/>-->
+            <!--<Button-->
+            <!--android:id="@+id/PDFSetButtonD"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:text="Set"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:textColor="#65abff"-->
+
+            <!--android:background="@drawable/bt_8"-->
+            <!--/>-->
+
+            <!--</LinearLayout>-->
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="#ffffff"
+            android:gravity="bottom">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:gravity="bottom"
+
+                android:layout_alignParentBottom="true"
+                >
+                <LinearLayout
+                    android:id="@+id/RL13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#ffffff"
+                    >
+                    <com.grozziie.grozziie_pdf.CenterTextViewButton
+                        android:id="@+id/PDFPrintButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pdfprint"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:text="@string/flipper_print"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"
+                        android:drawablePadding="10dp"
+
+                        android:layout_marginRight="1dp"
+                        android:background="@drawable/bt_12"
+
+                        />
+                    <com.grozziie.grozziie_pdf.CenterTextViewButton
+
+                        android:layout_weight="1"
+                        android:id="@+id/PDFSetButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pdfset"
+                        android:background="@drawable/bt_12"
+                        android:gravity="center"
+                        android:text="@string/flipper_set"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+
+                        android:layout_marginLeft="1dp"
+                        />
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

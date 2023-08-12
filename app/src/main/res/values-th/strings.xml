@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--多语言使用===============================================================-->
+    <!--selectfile界面==============-->
+    <string name="file_openfile">เปิดไฟล์</string>
+    <string name="file_openwechat">"เปิด
+Wechat"</string>
+    <string name="file_openwhatsapp">"เปิด
+WhatsApp"</string>
+    <string name="file_openimage">เปิดภาพ</string>
+    <string name="file_webpages">เปิดเว็บ</string>
+    <string name="file_myprinter">เครื่องพิมพ์ของฉัน</string>
+    <string name="file_labelprint">พิมพ์ฉลาก</string>
+
+
+    <string name="file_installwechat">กรุณาติดตั้ง wechat ก่อน</string>
+    <string name="file_applist">อนุญาตให้อ่านรายการแอป</string>
+    <string name="file_installwhatsapp">โปรดติดตั้ง whatsapp ก่อน</string>
+    <string name="file_wait">รอ</string>
+
+    <!--==========================-->
+
+    <!--PDFSet界面=====================-->
+    <string name="set_linkprinter">เชื่อมต่อเครื่องพิมพ์</string>
+    <string name="set_setdimensions">กําหนดขนาด</string>
+    <string name="set_helpcenter">ศูนย์ช่วยเหลือ</string>
+    <!--================================-->
+
+
+    <!--PDFSetFunction界面=======================-->
+    <string name="function_speed">"ความเร็ว     "</string>
+    <string name="function_density">"ความคมชัด"</string>
+    <string name="function_contrast">"ตัดกัน         "</string>
+    <string name="function_dither">"แปรผัน       "</string>
+
+
+    <string name="function_halftone">"การประมวลขาวดําแบบฮาล์ฟโทน        "</string>
+    <string name="function_hdefault">ค่าเริ่มต้น</string>
+    <string name="function_hdither">แปรผัน</string>
+    <string name="function_hdiffusion">แพร่กระจาย</string>
+    <string name="function_hgrayscale">ระดับสีเทา</string>
+    <string name="function_barcodeprocess">การประมวลผลบาร์โค้ด</string>
+    <string name="function_cutprocess">การตัดเฉือน</string>
+
+    <!--=========================================-->
+
+
+    <!--PopupwindowHuiDu界面======================================-->
+    <string name="popup_huidusave">เก็บรักษา</string>
+    <!--========================================================-->
+
+    <!--ViewFipper界面================================================-->
+    <string name="flipper_ratio">"รักษาอัตราส่วนภาพ        "</string>
+    <string name="flipper_papersizew">ขนาดกระดาษ (กว้าง):</string>
+    <string name="flipper_papersizeh">ขนาดกระดาษ (สูง):</string>
+    <string name="flipper_pagestart">เริ่มต้น:</string>
+    <string name="flipper_pageend">จบ:</string>
+    <string name="flipper_copies">สำเนา:</string>
+    <string name="flipper_rotate">หมุน:</string>
+    <string name="flipper_print">ปริ้น</string>
+    <string name="flipper_set">ชุด</string>
+
+    <string name="flipper_pdfnull">pdf โมฆะ</string>
+    <string name="flipper_fileformat">โปรดยืนยันรูปแบบไฟล์</string>
+    <string name="flipper_valueless">"โปรดป้อนค่าที่น้อยกว่า "</string>
+    <string name="flipper_enternumber">กรุณากรอกตัวเลข</string>
+    <string name="flipper_connectdevice">กรุณาเชื่อมต่ออุปกรณ์...</string>
+    <string name="flipper_selectfile">กรุณาเลือกไฟล์ที่จะพิมพ์</string>
+    <string name="flipper_notzero">ว่าง</string>
+    <string name="flipper_numberpages">กรุณายืนยันจำนวนหน้า</string>
+    <string name="flipper_notempty">ว่าง</string>
+    <string name="flipper_backexit">กดอีกครั้งเพื่อออก</string>
+    <!--============================================================================-->
+    <!--BlueToothMain界面================================================================-->
+    <string name="bluetoothmain_on">ปิด</string>
+    <string name="bluetoothmain_off">เปิด</string>
+    <string name="bluetoothmain_disconnect">ตัดการเชื่อมต่อ</string>
+    <string name="bluetoothmain_search">กำลังค้นหาอุปกรณ์</string>
+    <string name="bluetoothmain_connect">"เชื่อมต่อบลูทูธ "</string>
+    <string name="bluetoothmain_connecting">อุปกรณ์เชื่อมต่อ</string>
+    <string name="bluetoothmain_printing">การพิมพ์</string>
+    <string name="bluetoothmain_complete">ค้นหาเสร็จสิ้น</string>
+    <string name="bluetoothmain_devicenotconnect">อุปกรณ์ไม่ได้เชื่อมต่อ</string>
+    <string name="bluetoothmain_beginconnect">เริ่มต้นการเชื่อมต่อ</string>
+
+
+    <string name="bluetoothmain_opengps">สามารถใช้บลูทูธได้หลังจากเปิด GPS แล้ว</string>
+    <string name="bluetoothmain_openpermission">ผู้ใช้สามารถใช้งานได้หลังจากเปิดการอนุญาตเท่านั้น</string>
+    <!--=============================================================================================-->
+
+
+
+    <!--html界面================================================-->
+    <string name="html_go">เริ่ม</string>
+    <string name="html_print">ปริ้น</string>
+    <!--======================================================================================-->
+</resources>

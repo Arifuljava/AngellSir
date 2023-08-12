@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:paddingTop="20dp"
+    android:background="#ffffff"
+    >
+    <ImageView
+        android:id="@+id/loadImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/emoji12"
+        android:layout_marginLeft="20dp"
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#999999"
+        android:layout_below="@+id/loadImage"/>
+    <TextView
+        android:id="@+id/loadImageMakeSure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="确定"
+        android:textColor="#fbb80e"
+        android:layout_marginRight="20dp"
+
+        android:layout_alignParentRight="true"
+        />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/loadImageRecycle"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/loadImage"
+            android:layout_marginTop="10dp"
+            />
+
+
+
+
+
+
+
+
+
+
+    <!--android:textColor="#FFAD33"-->
+
+
+</RelativeLayout>

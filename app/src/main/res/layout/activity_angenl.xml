@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+    <FrameLayout
+        android:id="@+id/goodsDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/goodsFunction"
+        >
+    </FrameLayout>
+    <LinearLayout
+
+        android:id="@+id/goodsFunction"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="2dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        >
+        <LinearLayout
+            android:id="@+id/L1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:layout_weight="0">
+            <ImageView
+                android:id="@+id/goodsMarketMain"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:src="@drawable/supermaket128"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#222222"
+                android:text="历史"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/L2"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+
+                android:id="@+id/goodsBarcodeMain"
+                android:layout_width="wrap_content"
+
+                android:layout_height="28dp"
+                android:src="@drawable/pen128"
+                />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#222222"
+                android:text="New"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/L3"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="invisible">
+            <ImageView
+                android:id="@+id/goodsMeMain"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:src="@drawable/me128"
+                />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#222222"
+                android:text="模板"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

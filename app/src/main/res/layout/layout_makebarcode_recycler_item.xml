@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    >
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="#ffffff"
+         android:layout_marginTop="10dp"
+         android:layout_marginLeft="10dp"
+         android:gravity="center"
+
+         >
+          <ImageView
+              android:id="@+id/zgBarcodeImage"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+
+              />
+          <TextView
+              android:id="@+id/zgbarcodeText"
+              android:layout_height="30dp"
+              android:layout_width="40dp"
+              android:textSize="10sp"
+              android:textColor="#000"
+              android:gravity="center"
+              android:text="二维码"
+              android:layout_below="@+id/zgBarcodeImage"
+              />
+
+     </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/pdfbackground">
+    <ImageView
+        android:id="@+id/PDFImageTop"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/pdftop"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/selectLinLayout"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/PDFImageTop"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/pdfmain_background"
+
+
+            >
+            <Button
+
+                android:id="@+id/FileOtherBtn"
+
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:textAllCaps="false"
+                android:background="@drawable/bt_13"
+                android:text="@string/file_openfile"
+
+
+                android:fontFamily="@fonts/arial"
+                android:textSize="15sp"
+                android:textColor="#434343"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="10dp"
+
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/pdfmain_background"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/pdfmain_background"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_gravity="top"
+                android:gravity="top"
+                android:layout_marginBottom="5dp">
+
+
+
+
+                <Button
+
+                    android:id="@+id/FileWeixinBtn"
+                    android:text="@string/file_openwhatsapp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/bt_13"
+
+
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="#434343"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:fontFamily="@fonts/arial"
+                    android:layout_marginRight="5dp"
+                    />
+                <Button
+
+
+                    android:id="@+id/FileWeixinSBtn"
+                    android:text="@string/file_openwechat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/bt_13"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="#434343"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:fontFamily="@fonts/arial"
+                    android:layout_marginLeft="5dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/pdfmain_background"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+               android:layout_marginTop="5dp"
+
+                android:gravity="bottom">
+                <Button
+                    android:id="@+id/FileImageBtnX"
+                    android:text="@string/file_openimage"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+
+                    android:background="@drawable/bt_13"
+                    android:textAllCaps="false"
+
+                    android:textSize="15sp"
+                    android:textColor="#434343"
+                    android:textStyle="bold"
+                    android:fontFamily="@fonts/arial"
+                    android:layout_marginRight="5dp"
+
+                    android:textAlignment="center"
+                    />
+
+                <Button
+
+                    android:id="@+id/FileHtmlBtn"
+                    android:text="@string/file_webpages"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:textAllCaps="false"
+                    android:background="@drawable/bt_13"
+                    android:layout_marginLeft="5dp"
+
+                    android:textSize="15sp"
+                    android:textColor="#434343"
+                    android:textStyle="bold"
+                    android:fontFamily="@fonts/arial"
+
+
+                    android:textAlignment="center"
+
+                    />
+                <!--android:background="@drawable/bt_10"-->
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <!--android:drawableTop="@drawable/weixin256"-->
+
+        <!--android:drawableTop="@drawable/filemanger256"-->
+
+        <!--android:drawableTop="@drawable/set"-->
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/selectLin2Layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/selectLinLayout"
+        android:layout_marginTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+
+
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <com.grozziie.grozziie_pdf.CenterButtonButton
+                android:id="@+id/FileQQBtn"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:drawableLeft="@drawable/pdfprintblack"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:text="@string/file_myprinter"
+                android:textColor="#434343"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:drawablePadding="0dp"
+
+                android:layout_marginRight="0dp"
+                android:background="@drawable/bt_13"
+                android:fontFamily="@fonts/arial"
+
+
+                />
+            <!--android:background="@drawable/bt_11"-->
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/PDFShopLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/selectLin2Layout"
+        android:layout_marginTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+            <!--<com.example.administrator.loveangenl.CenterUpDownButtonButton-->
+                <!--android:id="@+id/ShopeeButton"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:drawableTop="@drawable/shopee"-->
+                <!--android:gravity="center"-->
+                <!---->
+
+                <!--android:includeFontPadding="false"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:background="@drawable/bt_13"-->
+               <!---->
+
+                <!--/>-->
+            <ImageButton
+                android:id="@+id/ShopeeButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/shopee"
+                android:background="@drawable/bt_13"
+                android:layout_marginRight="5dp"/>
+            <ImageButton
+                android:id="@+id/LazadaButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/lazada"
+                android:background="@drawable/bt_13"
+                android:layout_marginLeft="5dp"/>
+            <!--<Button-->
+
+                <!--android:id="@+id/Lazada"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:drawableTop="@drawable/lazada"-->
+                <!--android:textAllCaps="false"-->
+               <!--android:text="Grozziie Shop"-->
+                <!--android:textSize="18sp"-->
+                <!--android:textColor="#434343"-->
+                <!--android:textStyle="bold"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:background="@drawable/bt_13"-->
+
+
+                <!--android:drawablePadding="0dp"-->
+
+
+                <!--/>-->
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--android:visibility="invisible"-->
+    <LinearLayout
+
+        android:id="@+id/BarcodeEditLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/PDFShopLayout"
+        android:layout_marginTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:visibility="invisible"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+
+
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <com.grozziie.grozziie_pdf.CenterButtonButton
+                android:id="@+id/BarcodeEditButton"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:drawableLeft="@drawable/barcodeedit"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:text="@string/file_labelprint"
+                android:textColor="#434343"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:drawablePadding="5dp"
+
+                android:layout_marginRight="0dp"
+                android:background="@drawable/bt_13"
+                android:fontFamily="@fonts/arial"
+
+
+                />
+            <!--android:background="@drawable/bt_11"-->
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <!--<ListView-->
+        <!--android:id="@+id/fileListview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:listSelector="@drawable/list_item"-->
+        <!--android:layout_below="@id/selectLin2Layout"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:background="@drawable/pdfbackground2"-->
+        <!--/>-->
+</RelativeLayout>

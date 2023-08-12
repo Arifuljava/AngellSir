@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+    <View
+        android:id="@+id/marketV2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/bacgroundColor"
+        >
+
+    </View>
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/backLastBarcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backlast"
+        android:layout_marginLeft="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/barcodeHistoryOther"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/historyother"
+        android:visibility="invisible"/>
+    <ImageView
+        android:id="@+id/barcodeDevice"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/zgprint"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:id="@+id/barcodeDeviceState"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/zgdevicestate"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="40dp">
+        <TextView
+            android:id="@+id/textSizeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextSize"
+            android:textSize="12sp"
+            android:textColor="#000000"/>
+        <SeekBar
+            android:id="@+id/textSizeseekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:progressDrawable="@drawable/seekbar_color"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:max="100"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/functionButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:layout_marginTop="60dp">
+        <ImageView
+            android:id="@+id/rotateButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/makerotate90"
+            android:layout_weight="1"
+            />
+        <ImageView
+            android:id="@+id/trashButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/maketrash"
+           android:layout_weight="1"
+
+            />
+        <ImageView
+            android:id="@+id/maxButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/makemax"
+            android:layout_weight="1"
+
+            />
+        <ImageView
+            android:id="@+id/minButton"
+
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/makemin"
+            android:layout_weight="1"
+
+            />
+    </LinearLayout>
+    <com.grozziie.grozziie_pdf.ScrollViewTouchView
+        android:id="@+id/scrollViewBarcode"
+        android:layout_below="@id/functionButton"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px">
+
+            <RelativeLayout
+
+                android:id="@+id/textEditLayout"
+
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:background="#ffffff"
+                android:clipChildren="true"
+
+                >
+            </RelativeLayout>
+
+
+    </com.grozziie.grozziie_pdf.ScrollViewTouchView>
+
+    <LinearLayout
+        android:id="@+id/barcodeLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+
+        >
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/barcodeSize"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="纸张"
+            android:layout_weight="1"
+            android:background="@drawable/bt_5" />
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/barcodePrint"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="打印"
+            android:layout_weight="1"
+            android:background="@drawable/bt_5"
+            android:layout_marginLeft="10dp"/>
+        <!--<Button-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/barcodePrintEsc"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:text="esc"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/bt_5"-->
+            <!--android:layout_marginLeft="10dp"/>-->
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/barcodeSave"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="保存"
+            android:layout_weight="1"
+
+            android:background="@drawable/bt_5"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:id="@+id/layoutR1"
+        android:layout_marginBottom="70dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/barcodeRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="#ffffff"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

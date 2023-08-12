@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="bacgroundColor">#fbb80e</color>-->
+    <color name="bacgroundColor">#65abff</color>
+    <color name="seekbarbackColor">#ebebeb</color>
+    <color name="seekbarmoveColor">#fbb80e</color>
+
+
+    <color name="huise">#999999</color>
+    <color name="hintclolr">#bbbbbb</color>
+    <color name="colorHuise">#FFDF9CB8</color>
+    <color name="colorBlack">#FF0E0F13</color>
+    <color name="light_blue">#2884F5</color>
+    <color name="pdfmain_background">#eeeeee</color>
+
+</resources>

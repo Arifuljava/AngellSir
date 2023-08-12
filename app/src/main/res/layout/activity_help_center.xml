@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HelpCenterActivity"
+    android:background="#ffffff"
+
+
+    >
+    <RelativeLayout
+        android:id="@+id/PDFHelpCenterMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pdfhelpcenter"
+
+
+        >
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/backHelpCenterView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/bacgroundColor"
+                >
+
+            </View>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="V1.2.9.1"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_centerHorizontal="true"
+                />
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/backPDFHelpCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backlast"
+                android:layout_marginLeft="10dp"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            >
+            <Button
+                android:id="@+id/PDFWebSite"
+                android:layout_width="174dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+
+                android:layout_marginBottom="60dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:background="@drawable/pdfwebsite"
+
+                android:textColor="#ffffff"
+
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

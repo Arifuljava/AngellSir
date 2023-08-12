@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:background="#fbfbfb"
+    android:padding="10dp">
+     <ImageView
+         android:id="@+id/editBarcodeImage"
+         android:layout_width="50dp"
+         android:layout_height="50dp"
+        />
+     <TextView
+         android:id="@+id/editBarcodeText"
+         android:layout_height="30dp"
+         android:layout_width="50dp"
+         android:textSize="10sp"
+         android:textColor="#000"
+         android:gravity="center"
+         android:text="二维码"
+         android:layout_below="@+id/editBarcodeImage"
+         />
+</RelativeLayout>

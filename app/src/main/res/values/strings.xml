@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">Grozziie</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="shower_str12">停止搜索</string>
+
+    <!--多语言使用===============================================================-->
+    <!--selectfile界面==============-->
+    <string name="file_openfile">Open File</string>
+    <string name="file_openwechat">"Open
+Wechat"</string>
+    <string name="file_openwhatsapp">Open
+WhatsApp</string>
+    <string name="file_openimage">Open Image</string>
+    <string name="file_webpages">Web Pages</string>
+    <string name="file_myprinter">My Printer</string>
+    <string name="file_labelprint">Label Print</string>
+
+
+    <string name="file_installwechat">Please install wechat first</string>
+    <string name="file_applist">Please authorize to read the app list</string>
+    <string name="file_installwhatsapp">Please install whatsapp first</string>
+    <string name="file_wait">Please wait</string>
+
+    <!--==========================-->
+
+    <!--PDFSet界面=====================-->
+    <string name="set_linkprinter">Link printer</string>
+    <string name="set_setdimensions">Set dimensions</string>
+    <string name="set_helpcenter">Help center</string>
+    <!--================================-->
+
+
+    <!--PDFSetFunction界面=======================-->
+    <string name="function_speed">"Speed    "</string>
+    <string name="function_density">"Density  "</string>
+    <string name="function_contrast">Contrast</string>
+    <string name="function_dither">"Dither     "</string>
+    <string name="function_halftone">Halftone black and white processing</string>
+    <string name="function_hdefault">Default</string>
+    <string name="function_hdither">Dither</string>
+    <string name="function_hdiffusion">Diffusion</string>
+    <string name="function_hgrayscale">Grayscale</string>
+    <string name="function_barcodeprocess">Barcode processing</string>
+    <string name="function_cutprocess">Cut processing</string>
+    <!--=========================================-->
+
+
+    <!--PopupwindowHuiDu界面======================================-->
+    <string name="popup_huidusave">Save</string>
+    <!--========================================================-->
+
+    <!--ViewFipper界面================================================-->
+    <string name="flipper_ratio">"Preserve aspect ratio        "</string>
+    <string name="flipper_papersizew">Paper Size (W):</string>
+    <string name="flipper_papersizeh">Paper Size (H):</string>
+    <string name="flipper_pagestart">Page (Start):</string>
+    <string name="flipper_pageend">Page (End):</string>
+    <string name="flipper_copies">Copies:</string>
+    <string name="flipper_rotate">Rotate (°):</string>
+    <string name="flipper_print">PRINT</string>
+    <string name="flipper_set">SET</string>
+
+    <string name="flipper_pdfnull">pdf null</string>
+    <string name="flipper_fileformat">Please confirm the file format</string>
+    <string name="flipper_valueless">"Please enter a value less than "</string>
+    <string name="flipper_enternumber">Please enter a number</string>
+    <string name="flipper_connectdevice">Please connect the device...</string>
+    <string name="flipper_selectfile">Please select a file to print</string>
+    <string name="flipper_notzero">Print parameter cannot be 0</string>
+    <string name="flipper_numberpages">Please confirm the number of pages</string>
+    <string name="flipper_notempty">Print parameter cannot be empty</string>
+    <string name="flipper_backexit">Press again to exit</string>
+    <!--============================================================================-->
+    <!--BlueToothMain界面================================================================-->
+    <string name="bluetoothmain_on">ON</string>
+    <string name="bluetoothmain_off">OFF</string>
+    <string name="bluetoothmain_disconnect">Disconnected</string>
+    <string name="bluetoothmain_search">Searching devices</string>
+    <string name="bluetoothmain_connect">"Connected "</string>
+    <string name="bluetoothmain_connecting">Connecting devices</string>
+    <string name="bluetoothmain_printing">Printing</string>
+    <string name="bluetoothmain_complete">Search completed</string>
+    <string name="bluetoothmain_devicenotconnect">Devices not connected</string>
+    <string name="bluetoothmain_beginconnect">Begin to connect</string>
+
+
+    <string name="bluetoothmain_opengps">Bluetooth can be used after GPS is turned on</string>
+    <string name="bluetoothmain_openpermission">The user can only use it after opening the permission</string>
+    <!--=============================================================================================-->
+
+
+
+    <!--html界面================================================-->
+    <string name="html_go">Go</string>
+    <string name="html_print">Print</string>
+    <!--======================================================================================-->
+
+</resources>

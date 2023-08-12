@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:paddingTop="20dp"
+    android:background="#ffffff"
+    >
+    <ImageView
+        android:id="@+id/emojiImage1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/emoji12"
+        android:layout_marginLeft="20dp"
+        />
+    <ImageView
+        android:id="@+id/emojiImage2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/zgemoji21"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/emojiImage1"
+
+        />
+    <ImageView
+        android:id="@+id/emojiImage3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/emoji31"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/emojiImage2"
+
+        />
+    <ImageView
+        android:id="@+id/emojiImage4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/emoji41"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/emojiImage3"
+
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#999999"
+        android:layout_below="@+id/emojiImage1"/>
+    <TextView
+        android:id="@+id/emojiMakesure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="确定"
+        android:textColor="#fbb80e"
+        android:layout_marginRight="20dp"
+
+        android:layout_alignParentRight="true"
+        />
+
+
+
+    <HorizontalScrollView
+
+        android:id="@+id/emojiscrollViewT1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_below="@+id/emojiImage1"
+        android:layout_marginTop="5dp">
+
+    <LinearLayout
+        android:id="@+id/emojiLinearLayoutT1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/layoutE1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#ffffff">
+        <!--在这里定义布局一-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/emojiRecycle1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/emojiImage1"
+            />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutE2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#ffffff">
+            <!--在这里定义布局一-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/emojiRecycle2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/emojiImage1"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutE3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#ffffff">
+            <!--在这里定义布局一-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/emojiRecycle3"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/emojiImage1"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutE4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#ffffff">
+            <!--在这里定义布局一-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/emojiRecycle4"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/emojiImage1"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+
+    <!--android:textColor="#FFAD33"-->
+
+
+</RelativeLayout>

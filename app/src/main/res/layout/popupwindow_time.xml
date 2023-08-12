@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#ffffff"
+    >
+
+    <ImageView
+        android:id="@+id/TimeInput"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/time"
+        android:layout_marginLeft="20dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#999999"
+        android:layout_below="@+id/TimeInput"/>
+    <TextView
+        android:id="@+id/makeTimeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="确定"
+        android:textColor="#fbb80e"
+        android:layout_marginRight="20dp"
+
+        android:layout_alignParentRight="true"
+        />
+
+
+
+    <!--<Button-->
+        <!--android:id="@+id/makeGraffitiButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:text="确定"/>-->
+
+    <!--<NumberPicker-->
+
+        <!--android:id="@+id/makeTimeNumberPicker"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_below="@+id/makeTimeButton"-->
+        <!--android:background="#ffffff"-->
+        <!--&gt;-->
+
+    <!--</NumberPicker>-->
+    <com.shawnlin.numberpicker.NumberPicker
+
+        android:id="@+id/makeTimeNumberPicker"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/makeTimeButton"
+        android:background="#ffffff"
+        np_dividerColor="@color/huise"
+        np_textColor="#000000"
+        np_textSize="12sp"
+        np_selectedTextSize="15sp"
+        >
+
+    </com.shawnlin.numberpicker.NumberPicker>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageGraffiti"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="300dp"-->
+        <!--android:textSize="16sp"-->
+        <!--android:background="#ffffff"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_below="@+id/makeGraffitiButton"/>-->
+
+
+
+</RelativeLayout>

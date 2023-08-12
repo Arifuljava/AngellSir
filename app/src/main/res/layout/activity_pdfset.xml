@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PDFSetActivity"
+    android:background="@drawable/pdfbackground"
+
+
+    >
+    <View
+        android:id="@+id/backPDFSetView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/bacgroundColor"
+        >
+
+    </View>
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/backPDFSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backlast"
+        android:layout_marginLeft="10dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearlayoutDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/backPDFSet"
+
+
+        >
+        <Button
+            android:id="@+id/meDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/print"
+            android:background="@drawable/bt_3"
+            android:paddingLeft="10dp"
+            android:textAllCaps="false"
+            android:text="@string/set_linkprinter"
+            android:drawablePadding="15dp"
+            android:drawableRight="@drawable/rightflag"
+            android:gravity="center_vertical"
+            android:paddingRight="10dp"
+            android:textColor="#222222"
+            />
+
+        <Button
+            android:layout_marginTop="15dp"
+            android:id="@+id/meSet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/set"
+            android:background="@drawable/bt_3"
+            android:paddingLeft="10dp"
+            android:textAllCaps="false"
+            android:text="@string/set_setdimensions"
+            android:drawablePadding="15dp"
+            android:drawableRight="@drawable/rightflag"
+            android:gravity="center_vertical"
+            android:paddingRight="10dp"
+            android:textColor="#222222"
+            />
+        <Button
+            android:layout_marginTop="15dp"
+            android:id="@+id/meHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/help"
+            android:background="@drawable/bt_3"
+            android:paddingLeft="10dp"
+            android:textAllCaps="false"
+            android:text="@string/set_helpcenter"
+            android:drawablePadding="15dp"
+            android:drawableRight="@drawable/rightflag"
+            android:gravity="center_vertical"
+            android:paddingRight="10dp"
+            android:textColor="#222222"
+            />
+
+    </LinearLayout>
+    <!--<ImageView-->
+        <!--android:layout_below="@id/linearlayoutDisplay"-->
+        <!--android:id="@+id/GrozziieLogo"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:scaleType="centerInside"-->
+
+        <!--android:src="@drawable/pdfbackground"-->
+        <!--/>-->
+
+
+</RelativeLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/SaveDialogBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Save Naming"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/saveTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="123456"
+        android:textColor="#000000"
+        android:visibility="invisible"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/SaveDialogBar"
+        android:layout_marginTop="10dp"
+        android:background="#999999"
+        ></View>
+
+
+    <LinearLayout
+
+        android:id="@+id/SaveDialogContentLayout"
+        android:layout_below="@+id/SaveDialogBar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        >
+        <EditText
+            android:id="@+id/saveTextName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name is empty"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/bt_8"
+            android:padding="10dp"
+
+            />
+        <TextView
+            android:id="@+id/saveTextID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="2023011116"
+            android:textColor="#999999"
+            android:textSize="20sp"
+            android:enabled="false"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/SaveDialogContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:id="@+id/saveTextCancel"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="cancel"
+            android:background="@drawable/bt_8"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:textColor="#377d84"
+            android:padding="5dp" />
+        <TextView
+            android:id="@+id/saveTextConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Save"
+            android:background="@drawable/bt_8"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#377d84"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

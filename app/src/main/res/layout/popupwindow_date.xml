@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#ffffff"
+    >
+
+    <ImageView
+        android:id="@+id/dateInput"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/date"
+        android:layout_marginLeft="20dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#999999"
+        android:layout_below="@+id/dateInput"/>
+    <TextView
+        android:id="@+id/makeDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="确定"
+        android:textColor="#fbb80e"
+        android:layout_marginRight="20dp"
+
+        android:layout_alignParentRight="true"
+        />
+
+
+
+    <!--<Button-->
+        <!--android:id="@+id/makeGraffitiButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:text="确定"/>-->
+
+    <!--<NumberPicker-->
+
+        <!--android:id="@+id/makeDateNumberPicker"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_below="@+id/makeDateButton"-->
+        <!--&gt;-->
+
+    <!--</NumberPicker>-->
+
+    <com.shawnlin.numberpicker.NumberPicker
+
+        android:id="@+id/makeDateNumberPicker"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/makeDateButton"
+        app:np_dividerColor="@color/huise"
+        app:np_textColor="#000000"
+        app:np_textSize="12sp"
+        app:np_selectedTextSize="15sp"
+        >
+
+    </com.shawnlin.numberpicker.NumberPicker>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageGraffiti"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="300dp"-->
+        <!--android:textSize="16sp"-->
+        <!--android:background="#ffffff"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_below="@+id/makeGraffitiButton"/>-->
+
+
+
+</RelativeLayout>

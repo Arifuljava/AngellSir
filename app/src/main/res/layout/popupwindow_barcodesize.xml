@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#ffffff"
+    >
+
+    <ImageView
+        android:id="@+id/TimeInput"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/papersize"
+        android:layout_marginLeft="20dp"
+        />
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#999999"
+        android:layout_below="@+id/TimeInput"/>
+    <TextView
+        android:id="@+id/makeBarcodeSizeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="确定"
+        android:textColor="#fbb80e"
+        android:layout_marginRight="20dp"
+
+        android:layout_alignParentRight="true"
+        />
+
+    <LinearLayout
+        android:layout_below="@+id/TimeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/BarcodePageSizeWD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Width:"
+                android:textColor="#000000"
+                android:textSize="28sp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                />
+
+            <EditText
+                android:id="@+id/BarcodePageInputWidth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_6"
+                android:gravity="center"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="100"
+                android:textColor="#000000"
+                android:textColorHint="#999999"
+                android:textSize="28sp"
+                android:digits="0123456789"/>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mm"
+                android:textColor="#000000"
+                android:layout_gravity="center"
+                android:textSize="28sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/BarcodePageSizeHD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height:"
+                android:textColor="#000000"
+                android:textSize="28sp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                />
+
+            <EditText
+                android:id="@+id/BarcodePageInputHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_6"
+                android:gravity="center"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="100"
+                android:textColor="#000000"
+                android:textColorHint="#999999"
+                android:textSize="28sp"
+                android:digits="0123456789"/>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mm"
+                android:textColor="#000000"
+                android:layout_gravity="center"
+                android:textSize="28sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Direction: "
+                android:textColor="#000000"
+                android:textSize="28sp"/>
+            <TextView
+                android:id="@+id/DirectionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horizontal"
+                android:textColor="#000000"
+                android:textSize="28sp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/BarcodePageCopiesD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Copies:"
+                android:textColor="#000000"
+                android:textSize="28sp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                />
+
+            <EditText
+                android:id="@+id/BarcodePageCopies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_6"
+                android:gravity="center"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="1"
+                android:textColor="#000000"
+                android:textColorHint="#999999"
+                android:textSize="28sp"
+                android:digits="0123456789"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0000   "
+                android:textSize="28sp"
+                android:visibility="invisible"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <!--<Button-->
+        <!--android:id="@+id/makeGraffitiButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:text="确定"/>-->
+
+    <!--<NumberPicker-->
+
+        <!--android:id="@+id/makeTimeNumberPicker"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_below="@+id/makeTimeButton"-->
+        <!--android:background="#ffffff"-->
+        <!--&gt;-->
+
+    <!--</NumberPicker>-->
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageGraffiti"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="300dp"-->
+        <!--android:textSize="16sp"-->
+        <!--android:background="#ffffff"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_below="@+id/makeGraffitiButton"/>-->
+
+
+
+</RelativeLayout>
